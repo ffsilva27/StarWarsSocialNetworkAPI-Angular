@@ -7,6 +7,10 @@ O projeto consiste em um sistema de cadastro de "Rebeldes", mediante consumo de 
 * Criamos um pipe para melhor visualização do gênero, tendo em vista a formatação utilizada na API;
 * Criamos um modal para confirmação e demonstração do "Rebelde" criado;
 
+_________________________________________________________________________________________________________
+
+![Imagem de uma das telas da aplicação rodando](/Capturar.PNG)
+
 __________________________________________________________________________________________________________
 
 ### Angular CLI - version 13.0.0
