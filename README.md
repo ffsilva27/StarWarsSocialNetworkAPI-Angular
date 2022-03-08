@@ -1,27 +1,30 @@
-# StarWarsAngular
+# Star Wars Social Network
+O projeto consiste em um sistema de cadastro de "Rebeldes", mediante consumo de uma API, onde estes podem trocar itens entre si, fazer o report de um "traidor da causa" e atualizar sua localização.<br/>
+<br/>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.0.
+### Pontos importantes sobre o projeto:
+* A API consumida no projeto também foi desenvolvida pela equipe que construiu esse front, conforme especificado mais abaixo;
+* Criamos um pipe para melhor visualização do gênero, tendo em vista a formatação utilizada na API;
+* Criamos um modal para confirmação e demonstração do "Rebelde" criado;
 
-## Development server
+__________________________________________________________________________________________________________
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Angular CLI - version 13.0.0
+Esse projeto foi desenvolvido em Angular, portanto para execução realize os seguintes passos:
 
-## Code scaffolding
+1. Faça o clone do repositório para sua máquina;
+* `git clone url-projeto`
+3. Utilizando o prompt de comando, navegue até a pasta do projeto;
+* `cd caminho-da-pasta`
+5. Ainda no prompt de comando e já dentro da pasta do projeto, você precisará instalar todas as dependências do package.json, sendo assim execute o seguinte comando:
+* `npm install`
+6. Após finalização da instalação, ainda no prompt de comando, execute:
+* `ng serve`
+7. O projeto será executado em `http://localhost:4200/`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+________________________________________________________________________________________________________________
 
-## Build
+### API utilizada no projeto
+A API utilizada no projeto foi desenvolvida em grupo para o projeto de finalização do módulo de Desenvolvimento Web do curso de Web FullStack ministrado pela Let's Code, e encontra-se no seguinte repositório:
+https://github.com/FelipeRodriguesGare/StarWarsSocialNetworkAPI
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
