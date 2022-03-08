@@ -1,0 +1,7 @@
+<ng-container *ngIf="show" >
+    <div class="modalComponent">
+        <ng-content></ng-content>
+    </div>
+    <div class="overlay" (click)="change()"></div>
+</ng-container>
+

@@ -1,0 +1,56 @@
+<div class="criacao-box" [ngClass]="{'criacao-box-block': showSomething}" >
+    <img class="avatar" src="../../assets/img/Avatar.png" alt="" srcset="">
+    <h2>Bem-vindo ao lado negro da força</h2>
+    <form [formGroup]="father" (ngSubmit)="criar(); modal.change()">
+        <div class="rebelde-box">
+            <input class="formInput" type="text" formControlName="nome" placeholder=" ">
+            <label class="formLabel">Nome</label>
+        </div>
+        <div class="rebelde-box">
+            <input class="formInput" type="text" formControlName="idade" placeholder=" ">
+            <label class="formLabel">Idade</label>
+        </div>
+        <div class="rebelde-box">
+            <select class="formInputSelect" name="genero" id="genero" formControlName="genero">
+                <option value=""></option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+            </select>
+            <label class="formLabelSelect" for="genero">Gênero</label>
+        </div>
+        <div class="rebelde-box">
+            <input class="formInput" type="text" formControlName="nomeDaGalaxia" placeholder=" ">
+            <label class="formLabel">Galáxia</label>
+        </div>
+        <button>CRIAR</button>
+    </form>
+</div>
+
+<app-modal #modal (teste)="testeOutput2($event)">
+    <div class="box-card">
+        <div class="moldura-avatar">
+            <img src="../../assets/img/Avatar.png" alt="" class="avatar-card">
+        </div>
+        <p class="welcome-title">Você agora faz parte do lado negro da força!</p>
+        <p class="welcome">N° Reservista: <span class="info-card">{{ retornoCadastro.id }}</span></p>
+        <div class="info-pessoais">
+            <p class="welcome">Nome: <span class="info-card">{{retornoCadastro.nome}}</span></p>
+            <p class="welcome">Idade: <span class="info-card">{{retornoCadastro.idade}}</span></p>
+            <p class="welcome">Gênero: <span class="info-card">{{retornoCadastro.genero}}</span></p>
+        </div>
+        <div class="info-pessoais">
+            <p class="welcome">Galáxia: <span class="info-card">{{retornoCadastro.localizacao.nomeDaGalaxia}}</span></p>
+            <p class="welcome">Latitude: <span class="info-card">{{retornoCadastro.localizacao.latitude}}</span></p>
+            <p class="welcome">Longitude: <span class="info-card">{{retornoCadastro.localizacao.longitude}}</span></p>
+        </div>
+        <p class="welcome">Para nos ajudar nesta guerra, estes são seus itens:</p>
+        <div class="info-inventario">
+            <img src="../../assets/img/icons8-gun-30.png" alt="" srcset=""><span class="info-card">{{retornoCadastro.inventario.arma.quantidade}}</span>
+            <img src="../../assets/img/icons8-rifle-magazine-30.png" alt="" srcset=""><span class="info-card">{{retornoCadastro.inventario.municao.quantidade}}</span>
+            <img src="../../assets/img/icons8-thirst-30.png" alt="" srcset=""><span class="info-card">{{retornoCadastro.inventario.agua.quantidade}}</span>
+            <img src="../../assets/img/icons8-ham-30.png" alt="" srcset=""><span class="info-card">{{retornoCadastro.inventario.comida.quantidade}}</span>
+        </div>
+    </div>
+    <button class="button-modal" (click)="modal.change()">FECHAR</button>
+</app-modal>
+
