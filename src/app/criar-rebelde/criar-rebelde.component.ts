@@ -14,6 +14,7 @@ export class CriarRebeldeComponent implements OnInit {
   father: FormGroup;
   showSomething:boolean = false;
   teste:boolean = false;
+
   retornoCadastro: rebeldeInterface = {
     id: undefined,
     nome: '',

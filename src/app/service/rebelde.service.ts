@@ -103,4 +103,8 @@ export class RebeldeService {
     });
   }
 
+  listarRebeldes(){
+    return this.http.get(this.url);
+  }
+
 }
