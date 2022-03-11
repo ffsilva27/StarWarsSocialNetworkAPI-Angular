@@ -1,3 +1,6 @@
+<div >
+    <img class="background" src="../assets/img/background.png" alt="" srcset="">
+</div>
 <div class="criacao-box" [ngClass]="{'criacao-box-block': showSomething}" >
     <img class="avatar" src="../../assets/img/Avatar.png" alt="" srcset="">
     <h2>Bem-vindo ao lado negro da força</h2>
@@ -11,12 +14,12 @@
             <label class="formLabel">Idade</label>
         </div>
         <div class="rebelde-box">
-            <select class="formInputSelect" name="genero" id="genero" formControlName="genero">
+            <select class="formInputSelect" name="genero" id="genero" (change)="stateChange($event)" formControlName="genero">
                 <option value=""></option>
                 <option value="masculino">Masculino</option>
                 <option value="feminino">Feminino</option>
             </select>
-            <label class="formLabelSelect" for="genero">Gênero</label>
+            <label class="formLabelSelect" for="genero" [ngClass]="{'formLabelSelected': dropDownLabel, 'formLabelSelect': !dropDownLabel}">Gênero</label>
         </div>
         <div class="rebelde-box">
             <input class="formInput" type="text" formControlName="nomeDaGalaxia" placeholder=" ">

@@ -8,12 +8,18 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalComponent } from './modal/modal.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { MainComponent } from './main-screen/main/main.component';
+import { NavBarComponent } from './main-screen/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CriarRebeldeComponent,
-    ModalComponent
+    ModalComponent,
+    HomeComponent,
+    MainComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

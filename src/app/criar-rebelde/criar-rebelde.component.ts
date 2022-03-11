@@ -1,6 +1,7 @@
 import { RebeldeService, rebeldeInterface } from './../service/rebelde.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Event } from '@angular/router';
 
 @Component({
   selector: 'app-criar-rebelde',
@@ -9,6 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CriarRebeldeComponent implements OnInit {
 
+  dropDownLabel: boolean = false;
   father: FormGroup;
   showSomething:boolean = false;
   teste:boolean = false;
@@ -65,5 +67,9 @@ export class CriarRebeldeComponent implements OnInit {
 
   testeOutput2(value: boolean){
     this.showSomething = value;
+  }
+
+  stateChange(event: any){
+    event.target.value !== "" ? this.dropDownLabel = true : this.dropDownLabel = false;
   }
 }

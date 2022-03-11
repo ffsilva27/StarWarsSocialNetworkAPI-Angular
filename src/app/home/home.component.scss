@@ -5,6 +5,12 @@
     position: relative;
 }
 
+.background {
+    width: 100%;
+    height: 100vh;
+    z-index: -100;
+    position: relative;
+}
 
 .criacao-box{
     position: absolute;
@@ -79,21 +85,6 @@
     transition: .5s;
 }
 
-.criacao-box .rebelde-box select ~ label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px 0;
-    font-size: 15px;
-    color: #fff;
-    pointer-events: none;
-    transition: .5s;
-}
-
-option{
-    color: #ff0043;
-}
-
 .criacao-box .rebelde-box input:focus ~ .formLabel,
 .formInput:not(:placeholder-shown).formInput:not(:focus) ~ .formLabel {
     top: -20px;
@@ -102,18 +93,15 @@ option{
     font-size: 11px;
 }
 
-.criacao-box .rebelde-box select:focus ~ .formLabelSelect, 
-.formLabelSelected{
-    top: -20px !important;
-    left: 0 !important;
-    color: #ff0043 !important;
-    font-size: 11px !important;
+.buttonWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .criacao-box form button {
     position: relative;
     padding: 10px 20px;
-    left: 33%;
     color: #ff0043;
     font-size: 15px;
     transition: .5s;
@@ -125,93 +113,6 @@ option{
 }
 
 .criacao-box form button:hover {
-    background: #ff0043;
-    color: #fff;
-    box-shadow: 0 0 5px #ff0043,
-                0 0 25px #ff0043,
-                0 0 50px #ff0043,
-                0 0 100px #ff0043;
-}
-
-// Estilização Modal
-
-.box-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.moldura-avatar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: -90px;
-    width: 25%;
-    height: 100px;
-    background: rgba(0,0,0,.5);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
-    border-radius: 50%;
-}
-
-.avatar-card{
-    height: 70px;
-}
-
-.welcome-title {
-    margin-top: 15px;
-    color: #ff0043;
-    font-size: 16px;
-    font-weight: bolder;
-}
-
-.welcome {
-    margin-top: 15px;
-    color: #ff0043;
-    font-size: 15px;
-}
-
-.info-card{
-    color: AliceBlue;
-    font-size: 13px;
-    font-weight: lighter;
-}
-
-.info-pessoais{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content:space-around;
-    align-items:center;
-    margin-top: -15px;
-}
-
-.info-inventario {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content:space-around;
-    align-items:center;
-    margin: 15px;
-}
-
-.button-modal {
-    position: relative;
-    padding: 10px 20px;
-    left: 33%;
-    color: #ff0043;
-    font-size: 15px;
-    transition: .5s;
-    margin-top: 20px;
-    letter-spacing: 4px;
-    background: transparent;
-    border: 1px solid #fff;
-    border-radius: 15px;
-}
-
-.button-modal:hover {
     background: #ff0043;
     color: #fff;
     box-shadow: 0 0 5px #ff0043,
