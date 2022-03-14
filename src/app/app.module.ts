@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { MainComponent } from './main-screen/main/main.component';
 import { NavBarComponent } from './main-screen/nav-bar/nav-bar.component';
 import { ListagemRebeldesComponent } from './listagem-rebeldes/listagem-rebeldes.component';
+import { ModalListagemComponent } from './modal-listagem/modal-listagem.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ListagemRebeldesComponent } from './listagem-rebeldes/listagem-rebeldes
     HomeComponent,
     MainComponent,
     NavBarComponent,
-    ListagemRebeldesComponent
+    ListagemRebeldesComponent,
+    ModalListagemComponent
   ],
   imports: [
     BrowserModule,

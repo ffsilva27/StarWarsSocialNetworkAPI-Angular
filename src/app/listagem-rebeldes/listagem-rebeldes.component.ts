@@ -12,7 +12,7 @@ export class ListagemRebeldesComponent implements OnInit {
 
   listaDeRebeldes: any = [];
 
-  constructor(private rebeldeService: RebeldeService, private http: HttpClient) { }
+  constructor(public rebeldeService: RebeldeService, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.listarRebeldes();

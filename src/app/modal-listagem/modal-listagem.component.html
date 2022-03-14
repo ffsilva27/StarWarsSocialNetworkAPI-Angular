@@ -1,0 +1,33 @@
+<div class="overlay" [ngClass]="{'dontShow':showModal}" >
+    <div class="box-modal">
+        <div class="exit">
+            <button (click)="show()"><img src="../../assets/img/x.svg" alt="" srcset=""></button>
+        </div>
+        <div class="moldura-avatar">
+            <img src="../../assets/img/Avatar.png" alt="" class="avatar-card">
+        </div>
+        <p class="welcome-title">Informações confidenciais</p>
+        <p class="welcome">Nome: <span class="info-card">{{ rebeldeService.rebelde.nome }}</span></p>
+        <div class="info-pessoais">
+            <p class="welcome">Idade: <span class="info-card">{{ rebeldeService.rebelde.idade }}</span></p>
+            <p class="welcome">Gênero: <span class="info-card">{{ rebeldeService.rebelde.genero }}</span></p>
+        </div>
+        <div class="info-pessoais">
+            <p class="welcome">Galáxia: <span class="info-card">{{ rebeldeService.rebelde.localizacao.nomeDaGalaxia }}</span></p>
+            <p class="welcome">Latitude: <span class="info-card">{{ rebeldeService.rebelde.localizacao.latitude }}</span></p>
+            <p class="welcome">Longitude: <span class="info-card">{{ rebeldeService.rebelde.localizacao.longitude }}</span></p>
+        </div>
+        <p class="welcome">Traidor: <span class="info-card">{{ rebeldeService.rebelde.traidor }}</span></p>
+        <div class="info-inventario">
+            <img src="../../assets/img/icons8-gun-30.png" alt="" srcset=""><span class="info-card">{{ rebeldeService.rebelde.inventario.items.arma.quantidade }}</span>
+            <img src="../../assets/img/icons8-rifle-magazine-30.png" alt="" srcset=""><span class="info-card">{{ rebeldeService.rebelde.inventario.items.municao.quantidade }}</span>
+            <img src="../../assets/img/icons8-thirst-30.png" alt="" srcset=""><span class="info-card">{{ rebeldeService.rebelde.inventario.items.agua.quantidade }}</span>
+            <img src="../../assets/img/icons8-ham-30.png" alt="" srcset=""><span class="info-card">{{ rebeldeService.rebelde.inventario.items.comida.quantidade }}</span>
+        </div>
+        <div class="count">
+            <button (click)="count($event)"><img class="count-img-subtract" src="../../assets/img/subtract.svg" alt="" srcset=""></button>
+            <input type="text" [(ngModel)]="counter">
+            <button (click)="count($event)"><img class="count-img-plus" src="../../assets/img/plus.svg" alt="" srcset=""></button>
+        </div>
+    </div>
+</div>

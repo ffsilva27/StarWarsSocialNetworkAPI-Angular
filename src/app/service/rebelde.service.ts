@@ -15,21 +15,23 @@ export interface rebeldeInterface {
     nomeDaGalaxia: string
   },
   inventario: {
-    arma:{
-      pontos: number,
-      quantidade: number
-    },
-    municao:{
-      pontos: number,
-      quantidade: number
-    },
-    agua:{
-      pontos: number,
-      quantidade: number
-    },
-    comida:{
-      pontos: number,
-      quantidade: number
+    items:{
+      arma:{
+        pontos: number,
+        quantidade: number
+      },
+      municao:{
+        pontos: number,
+        quantidade: number
+      },
+      agua:{
+        pontos: number,
+        quantidade: number
+      },
+      comida:{
+        pontos: number,
+        quantidade: number
+      }
     }
   }
 }
@@ -64,21 +66,23 @@ export class RebeldeService {
       nomeDaGalaxia: ''
     },
     inventario: {
-      arma: {
-        pontos: 0,
-        quantidade: 0
-      },
-      municao: {
-        pontos: 0,
-        quantidade: 0
-      },
-      agua: {
-        pontos: 0,
-        quantidade: 0
-      },
-      comida: {
-        pontos: 0,
-        quantidade: 0
+      items: {
+        arma: {
+          pontos: 0,
+          quantidade: 0
+        },
+        municao: {
+          pontos: 0,
+          quantidade: 0
+        },
+        agua: {
+          pontos: 0,
+          quantidade: 0
+        },
+        comida: {
+          pontos: 0,
+          quantidade: 0
+        }
       }
     }
   }

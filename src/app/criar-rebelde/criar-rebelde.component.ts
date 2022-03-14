@@ -27,21 +27,23 @@ export class CriarRebeldeComponent implements OnInit {
       nomeDaGalaxia: ''
     },
     inventario: {
-      arma: {
-        pontos: 0,
-        quantidade: 0
-      },
-      municao: {
-        pontos: 0,
-        quantidade: 0
-      },
-      agua: {
-        pontos: 0,
-        quantidade: 0
-      },
-      comida: {
-        pontos: 0,
-        quantidade: 0
+      items: {
+        arma: {
+          pontos: 0,
+          quantidade: 0
+        },
+        municao: {
+          pontos: 0,
+          quantidade: 0
+        },
+        agua: {
+          pontos: 0,
+          quantidade: 0
+        },
+        comida: {
+          pontos: 0,
+          quantidade: 0
+        }
       }
     }
   }
