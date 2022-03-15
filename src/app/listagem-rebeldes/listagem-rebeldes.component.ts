@@ -31,4 +31,13 @@ export class ListagemRebeldesComponent implements OnInit {
     })
   }
 
+  relatarTraidor(id:string){
+    this.rebeldeService.relatarTraidor(id).subscribe();
+    this.load();
+  }
+
+  load(){
+    location.reload();
+  }
+
 }

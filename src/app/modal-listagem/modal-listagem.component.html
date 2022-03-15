@@ -13,14 +13,14 @@
                 <p class="welcome">Nome: <span class="info-card">{{ rebeldeService.rebelde.nome }}</span></p>
                 <div class="info-pessoais">
                     <p class="welcome">Idade: <span class="info-card">{{ rebeldeService.rebelde.idade }}</span></p>
-                    <p class="welcome">Gênero: <span class="info-card">{{ rebeldeService.rebelde.genero }}</span></p>
+                    <p class="welcome">Gênero: <span class="info-card">{{ rebeldeService.rebelde.genero | genero }}</span></p>
                 </div>
                 <div class="info-pessoais">
                     <p class="welcome">Galáxia: <span class="info-card">{{ rebeldeService.rebelde.localizacao.nomeDaGalaxia }}</span></p>
                     <p class="welcome">Latitude: <span class="info-card">{{ rebeldeService.rebelde.localizacao.latitude }}</span></p>
                     <p class="welcome">Longitude: <span class="info-card">{{ rebeldeService.rebelde.localizacao.longitude }}</span></p>
                 </div>
-                <p class="welcome">Traidor: <span class="info-card">{{ rebeldeService.rebelde.traidor }}</span></p>
+                <p class="welcome">Traidor: <span class="info-card">{{ rebeldeService.rebelde.traidor | traidor }}</span></p>
                 <div class="info-inventario">
                     <div class="quebra">
                         <img src="../../assets/img/icons8-gun-30.png" alt="" srcset=""><span class="info-card">{{ rebeldeService.rebelde.inventario.items.arma.quantidade }}</span>
@@ -63,14 +63,14 @@
                 <p class="welcome">Nome: <span class="info-card">{{ rebeldeService.rebelde.nome }}</span></p>
                 <div class="info-pessoais">
                     <p class="welcome">Idade: <span class="info-card">{{ rebeldeService.rebelde.idade }}</span></p>
-                    <p class="welcome">Gênero: <span class="info-card">{{ rebeldeService.rebelde.genero }}</span></p>
+                    <p class="welcome">Gênero: <span class="info-card">{{ rebeldeService.rebelde.genero | genero}}</span></p>
                 </div>
                 <div class="info-pessoais">
                     <p class="welcome">Galáxia: <span class="info-card">{{ rebeldeService.rebelde.localizacao.nomeDaGalaxia }}</span></p>
                     <p class="welcome">Latitude: <span class="info-card">{{ rebeldeService.rebelde.localizacao.latitude }}</span></p>
                     <p class="welcome">Longitude: <span class="info-card">{{ rebeldeService.rebelde.localizacao.longitude }}</span></p>
                 </div>
-                <p class="welcome">Traidor: <span class="info-card">{{ rebeldeService.rebelde.traidor }}</span></p>
+                <p class="welcome">Traidor: <span class="info-card">{{ rebeldeService.rebelde.traidor | traidor }}</span></p>
                 <div class="info-inventario">
                     <div class="quebra">
                         <img src="../../assets/img/icons8-gun-30.png" alt="" srcset=""><span class="info-card">{{ rebeldeService.rebelde.inventario.items.arma.quantidade }}</span>

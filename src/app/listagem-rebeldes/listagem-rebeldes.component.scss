@@ -10,7 +10,6 @@
     border-radius: 10px;
     margin-top: 70px;
     width: 100%;
-    cursor: pointer;
 }
 
 .moldura-avatar {
@@ -37,6 +36,12 @@
     position: relative;
 }
 
+.box-button{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
 .welcome {
     margin-top: 15px;
     color: #ff0043;
@@ -55,8 +60,8 @@
     width: 100%;
     justify-content:space-around;
     align-items:center;
-    margin-top: -15px;
-    margin-bottom: -15px;
+    margin-top: -5px;
+    margin-bottom: -5px;
 }
 
 .cardComponent button {

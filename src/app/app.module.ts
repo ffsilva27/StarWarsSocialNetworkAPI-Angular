@@ -13,6 +13,8 @@ import { MainComponent } from './main-screen/main/main.component';
 import { NavBarComponent } from './main-screen/nav-bar/nav-bar.component';
 import { ListagemRebeldesComponent } from './listagem-rebeldes/listagem-rebeldes.component';
 import { ModalListagemComponent } from './modal-listagem/modal-listagem.component';
+import { TraidorPipe } from './util/traidor.pipe';
+import { GeneroPipe } from './util/genero.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { ModalListagemComponent } from './modal-listagem/modal-listagem.componen
     MainComponent,
     NavBarComponent,
     ListagemRebeldesComponent,
-    ModalListagemComponent
+    ModalListagemComponent,
+    TraidorPipe,
+    GeneroPipe
   ],
   imports: [
     BrowserModule,

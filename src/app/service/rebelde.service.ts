@@ -50,7 +50,8 @@ export interface rebeldeRequestInfo {
 })
 
 export class RebeldeService {
-  url: string = "http://localhost:8080/rebeldes"
+  url: string = "http://localhost:8080/rebeldes";
+  urlTraidor: string = "http://localhost:8080/rebeldes/traidor/";
 
   constructor(private http: HttpClient) { }
 
@@ -109,6 +110,10 @@ export class RebeldeService {
 
   listarRebeldes(){
     return this.http.get(this.url);
+  }
+
+  relatarTraidor(id:string){
+    return this.http.patch(this.urlTraidor + id, "");
   }
 
 }
