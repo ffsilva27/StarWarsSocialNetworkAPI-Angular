@@ -2,6 +2,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { RebeldeService, rebeldeInterface } from './../service/rebelde.service';
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-listagem-rebeldes',
@@ -12,7 +13,7 @@ export class ListagemRebeldesComponent implements OnInit {
 
   listaDeRebeldes: any = [];
 
-  constructor(public rebeldeService: RebeldeService, private http: HttpClient) { }
+  constructor(public rebeldeService: RebeldeService, private http: HttpClient, private matSnack: MatSnackBar) { }
 
   ngOnInit(): void {
     this.listarRebeldes();
@@ -33,11 +34,14 @@ export class ListagemRebeldesComponent implements OnInit {
 
   relatarTraidor(id:string){
     this.rebeldeService.relatarTraidor(id).subscribe();
+    this.matSnack.open("Traidor reportdado com sucesso!", "Sucesso", {duration:1500});
     this.load();
   }
 
   load(){
-    location.reload();
+    setTimeout(function(){
+      location.reload();
+    },1500); 
   }
 
 }

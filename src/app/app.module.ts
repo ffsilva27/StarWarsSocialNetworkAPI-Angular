@@ -15,6 +15,8 @@ import { ListagemRebeldesComponent } from './listagem-rebeldes/listagem-rebeldes
 import { ModalListagemComponent } from './modal-listagem/modal-listagem.component';
 import { TraidorPipe } from './util/traidor.pipe';
 import { GeneroPipe } from './util/genero.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { GeneroPipe } from './util/genero.pipe';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
