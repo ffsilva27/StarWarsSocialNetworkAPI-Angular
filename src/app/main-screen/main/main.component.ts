@@ -48,13 +48,17 @@ export class MainComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.user = this.rebeldeService.user;
-    this.avatar = '../../../assets/img/'+ this.user.avatar +'.png';
+    this.rebeldeService.getRebelde(localStorage.getItem('user')).subscribe(data =>{
+      this.user = data;
+      this.avatar = '../../../assets/img/'+ this.user.avatar +'.png';
+    })
   }
   
   ngOnChanges(): void{
-    this.user = this.rebeldeService.user;
-    this.avatar = '../../../assets/img/'+ this.user.avatar +'.png';
+    this.rebeldeService.getRebelde(localStorage.getItem('user')).subscribe(data =>{
+      this.user = data;
+      this.avatar = '../../../assets/img/'+ this.user.avatar +'.png';
+    })
   }
 
 }

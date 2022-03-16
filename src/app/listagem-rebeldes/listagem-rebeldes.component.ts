@@ -12,6 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ListagemRebeldesComponent implements OnInit {
 
   listaDeRebeldes: any = [];
+  teste: any;
 
   constructor(public rebeldeService: RebeldeService, private http: HttpClient, private matSnack: MatSnackBar) { }
 
@@ -43,6 +44,10 @@ export class ListagemRebeldesComponent implements OnInit {
     });
     this.matSnack.open("Traidor reportdado com sucesso!", "Sucesso", {duration:1500});
     return false
+  }
+
+  testeOutput2(value: boolean){
+    this.ngOnInit()
   }
 
 }

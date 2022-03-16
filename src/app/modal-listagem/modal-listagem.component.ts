@@ -1,6 +1,6 @@
 import { Event } from '@angular/router';
 import { RebeldeService } from './../service/rebelde.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-modal-listagem',
@@ -18,6 +18,8 @@ export class ModalListagemComponent implements OnInit {
   counterMunicionDest:number = 0;
   counterFoodDest:number = 0;
   counterWaterDest:number = 0;
+    
+  @Output() teste =  new EventEmitter<boolean>();
 
   constructor(public rebeldeService: RebeldeService) { }
 
@@ -100,15 +102,6 @@ export class ModalListagemComponent implements OnInit {
   }
 
   negociar(){
-    this.showModal = !this.showModal;
-    this.counterGunRemet = 0;
-    this.counterMunicionRemet = 0;
-    this.counterFoodRemet = 0;
-    this.counterWaterRemet = 0;
-    this.counterGunDest = 0;
-    this.counterMunicionDest = 0;
-    this.counterFoodDest = 0;
-    this.counterWaterDest = 0;
 
     let itemRemetente = []
     if (this.counterGunRemet > 0) itemRemetente.push("arma"); 
@@ -128,16 +121,22 @@ export class ModalListagemComponent implements OnInit {
     if (this.counterWaterDest > 0) qtdItemDestinatario.push(this.counterWaterDest); 
     if (this.counterFoodDest > 0) qtdItemDestinatario.push(this.counterFoodDest); 
 
-
     let qtdItemRemetente = []
     if (this.counterGunRemet > 0) qtdItemRemetente.push(this.counterGunRemet); 
     if (this.counterMunicionRemet > 0) qtdItemRemetente.push(this.counterMunicionRemet); 
     if (this.counterWaterRemet > 0) qtdItemRemetente.push(this.counterWaterRemet); 
     if (this.counterFoodRemet > 0) qtdItemRemetente.push(this.counterFoodRemet); 
  
-    this.rebeldeService.negociar(itemRemetente, itemDestinatario, qtdItemRemetente, qtdItemRemetente).subscribe(data => {
+    console.log(qtdItemDestinatario)
+    console.log(qtdItemRemetente)
+
+    this.rebeldeService.negociar(itemRemetente, itemDestinatario, qtdItemRemetente, qtdItemDestinatario).subscribe(data => {
       console.log(data)
     })
+  }
+
+  testeOutput(){
+    this.teste.emit(true);
   }
 
 }
