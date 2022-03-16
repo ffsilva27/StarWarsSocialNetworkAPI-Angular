@@ -50,6 +50,7 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
     this.rebeldeService.getRebelde(localStorage.getItem('user')).subscribe(data =>{
       this.user = data;
+      this.rebeldeService.user = data;
       this.avatar = '../../../assets/img/'+ this.user.avatar +'.png';
     })
   }
@@ -57,6 +58,7 @@ export class MainComponent implements OnInit {
   ngOnChanges(): void{
     this.rebeldeService.getRebelde(localStorage.getItem('user')).subscribe(data =>{
       this.user = data;
+      this.rebeldeService.user = data;
       this.avatar = '../../../assets/img/'+ this.user.avatar +'.png';
     })
   }
