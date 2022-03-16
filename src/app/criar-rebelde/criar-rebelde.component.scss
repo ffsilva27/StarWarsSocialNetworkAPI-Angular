@@ -20,6 +20,17 @@
     border-radius: 10px;
 }
 
+.box-button {
+    width: 100%;
+}
+
+.rebelde-box-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
 .criacao-box-block{
     display: none;
 }
@@ -114,7 +125,6 @@ option{
 .criacao-box form button {
     position: relative;
     padding: 10px 20px;
-    left: 33%;
     color: #ff0043;
     font-size: 15px;
     transition: .5s;

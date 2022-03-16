@@ -4,7 +4,7 @@
         <div>
             <a>
                 <div class="avatarWrapper">
-                    <img class="avatar" src="../../../assets/img/box-arrow-left.svg">
+                    <button (click)="logout()"><img class="avatar" src="../../../assets/img/box-arrow-left.svg"></button>
                 </div>
                 <p>Logout</p>
             </a>
@@ -12,7 +12,7 @@
                 <div class="avatarWrapper">
                     <img src="../../../assets/img/icons8-darth-vader.svg" class="avatar">
                 </div>
-                <p>Profile</p>
+                <p>{{rebeldeService.user.nome}}</p>
             </a>
         </div>
     </nav>

@@ -1,7 +1,8 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { RebeldeService, rebeldeInterface } from './../service/rebelde.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Event } from '@angular/router';
+import { Event, Router } from '@angular/router';
 
 @Component({
   selector: 'app-criar-rebelde',
@@ -49,7 +50,7 @@ export class CriarRebeldeComponent implements OnInit {
     }
   }
 
-  constructor(private fb: FormBuilder, private rebeldeService: RebeldeService) {
+  constructor(private fb: FormBuilder, private rebeldeService: RebeldeService, private snackBar:MatSnackBar, private router:Router) {
     this.father = fb.group({
       username:["", Validators.required],
       senha:["", Validators.required],
@@ -65,6 +66,10 @@ export class CriarRebeldeComponent implements OnInit {
   }
 
   criar(){
+    if(this.father.invalid){
+      this.snackBar.open("Por favor preencher todos os campos!", "Error", {duration: 5000});
+      return;
+    }
     this.rebeldeService.cadastrarRebelde(this.father.get(['nome'])?.value, this.father.get(['idade'])?.value, this.father.get(['genero'])?.value, this.father.get(['nomeDaGalaxia'])?.value, this.father.get(['username'])?.value, this.father.get(['senha'])?.value).subscribe(data => {
       this.retornoCadastro = data;
       console.log(data);
@@ -79,5 +84,9 @@ export class CriarRebeldeComponent implements OnInit {
 
   stateChange(event: any){
     event.target.value !== "" ? this.dropDownLabel = true : this.dropDownLabel = false;
+  }
+
+  redirecionar(){
+    this.router.navigate(['/login'])
   }
 }
