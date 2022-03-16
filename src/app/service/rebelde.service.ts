@@ -52,6 +52,7 @@ export interface rebeldeRequestInfo {
 })
 
 export class RebeldeService {
+  userId: string = '';
   url: string = "http://localhost:8080/rebeldes";
   urlTraidor: string = "http://localhost:8080/rebeldes/traidor/";
   urlLogin: string = "http://localhost:8080/login";
@@ -125,7 +126,7 @@ export class RebeldeService {
   }
 
   getRebelde(id:any){
-    return this.http.get<rebeldeInterface>(this.url+"/{id}")
+    return this.http.get<rebeldeInterface>(this.url+"/"+id)
   }
 
   listarRebeldes(){

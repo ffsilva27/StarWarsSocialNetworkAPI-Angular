@@ -7,7 +7,7 @@ import { rebeldeInterface, RebeldeService } from 'src/app/service/rebelde.servic
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-
+  
   user: rebeldeInterface = {
     id: undefined,
     nome: '',
@@ -41,13 +41,16 @@ export class MainComponent implements OnInit {
       }
     }
   }
-
+  avatar: string = '';
+  
   constructor(private rebeldeService: RebeldeService) {
     
   }
-
+  
   ngOnInit(): void {
-    this.rebeldeService.getRebelde(localStorage.getItem('user')).subscribe(data=>{
+    this.rebeldeService.getRebelde(this.rebeldeService.userId).subscribe(data=>{
+      console.log(data)
+      this.avatar = '../../../assets/img/'+ this.user.avatar +'.png';
       this.user = data;
     })
   }
