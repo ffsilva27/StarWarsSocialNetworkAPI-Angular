@@ -6,6 +6,14 @@
     <h2>Bem-vindo ao lado negro da força</h2>
     <form [formGroup]="father" (ngSubmit)="criar(); modal.change()">
         <div class="rebelde-box">
+            <input class="formInput" type="text" formControlName="username" placeholder=" ">
+            <label class="formLabel">Username</label>
+        </div>
+        <div class="rebelde-box">
+            <input class="formInput" type="password" formControlName="senha" placeholder=" ">
+            <label class="formLabel">Senha</label>
+        </div>
+        <div class="rebelde-box">
             <input class="formInput" type="text" formControlName="nome" placeholder=" ">
             <label class="formLabel">Nome</label>
         </div>
@@ -32,7 +40,7 @@
 <app-modal #modal (teste)="testeOutput2($event)">
     <div class="box-card">
         <div class="moldura-avatar">
-            <img src="../../assets/img/Avatar.png" alt="" class="avatar-card">
+            <img src="../../assets/img/{{retornoCadastro.avatar}}.png" alt="" class="avatar-card">
         </div>
         <p class="welcome-title">Você agora faz parte do lado negro da força!</p>
         <p class="welcome">N° Reservista: <span class="info-card">{{ retornoCadastro.id }}</span></p>

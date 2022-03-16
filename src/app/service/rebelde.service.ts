@@ -147,9 +147,19 @@ export class RebeldeService {
     )
   }
 
-  cadastrarRebelde(nome:string, idade: number, genero:string, nomeDaGalaxia: string){
+  gerarAvatar(): number{  
+    let min = Math.ceil(1);
+    let max = Math.floor(6);
+    let indice = Math.floor(Math.random() * (max - min)) + min;
+    return indice;
+  }
+
+  cadastrarRebelde(nome:string, idade: number, genero:string, nomeDaGalaxia: string, username:string, senha:string){
     return this.http.post<rebeldeInterface>(this.url, {
+      username: username,
+      senha: senha,
       nome: nome,
+      avatar: "Avatar"+this.gerarAvatar(),
       idade: idade,
       genero: genero,
       localizacao:{
