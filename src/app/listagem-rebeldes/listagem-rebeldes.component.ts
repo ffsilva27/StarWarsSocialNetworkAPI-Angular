@@ -20,13 +20,6 @@ export class ListagemRebeldesComponent implements OnInit {
     this.listarRebeldes();
   }
 
-  gerarAvatar(): number{  
-    let min = Math.ceil(1);
-    let max = Math.floor(6);
-    let indice = Math.floor(Math.random() * (max - min)) + min;
-    return indice;
-  }
-
   listarRebeldes(){
     this.rebeldeService.listarRebeldes().subscribe(data=>{
       this.listaDeRebeldes = data;

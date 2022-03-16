@@ -65,9 +65,11 @@ export class CriarRebeldeComponent implements OnInit {
   }
 
   criar(){
-    this.rebeldeService.cadastrarRebelde(this.father.get(['nome'])?.value, this.father.get(['idade'])?.value, this.father.get(['genero'])?.value, this.father.get(['nomeDaGalaxia'])?.value).subscribe(data => {
+    this.rebeldeService.cadastrarRebelde(this.father.get(['nome'])?.value, this.father.get(['idade'])?.value, this.father.get(['genero'])?.value, this.father.get(['nomeDaGalaxia'])?.value, this.father.get(['username'])?.value, this.father.get(['senha'])?.value).subscribe(data => {
       this.retornoCadastro = data;
-      this.father.setValue({nome:"", idade:"", genero:"", nomeDaGalaxia:""});
+      console.log(data);
+      console.log(this.retornoCadastro);
+      this.father.setValue({nome:"", idade:"", genero:"", nomeDaGalaxia:"", username:"", senha:""});
     })
   }
 
