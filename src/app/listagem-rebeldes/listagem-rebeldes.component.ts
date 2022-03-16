@@ -31,15 +31,11 @@ export class ListagemRebeldesComponent implements OnInit {
   }
 
   relatarTraidor(id:string){
-    this.rebeldeService.relatarTraidor(id).subscribe();
+    this.rebeldeService.relatarTraidor(id).subscribe(() => {
+      this.ngOnInit()  
+    });
     this.matSnack.open("Traidor reportdado com sucesso!", "Sucesso", {duration:1500});
-    this.load();
-  }
-
-  load(){
-    setTimeout(function(){
-      location.reload();
-    },1500); 
+    return false
   }
 
 }

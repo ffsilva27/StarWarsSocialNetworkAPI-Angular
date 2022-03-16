@@ -51,5 +51,10 @@ export class MainComponent implements OnInit {
     this.user = this.rebeldeService.user;
     this.avatar = '../../../assets/img/'+ this.user.avatar +'.png';
   }
+  
+  ngOnChanges(): void{
+    this.user = this.rebeldeService.user;
+    this.avatar = '../../../assets/img/'+ this.user.avatar +'.png';
+  }
 
 }
