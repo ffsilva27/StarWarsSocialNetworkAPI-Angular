@@ -1,7 +1,18 @@
+<div >
+    <img class="background" src="../assets/img/background.png" alt="" srcset="">
+</div>
 <div class="criacao-box" [ngClass]="{'criacao-box-block': showSomething}" >
     <img class="avatar" src="../../assets/img/Avatar.png" alt="" srcset="">
     <h2>Bem-vindo ao lado negro da força</h2>
     <form [formGroup]="father" (ngSubmit)="criar(); modal.change()">
+        <div class="rebelde-box">
+            <input class="formInput" type="text" formControlName="username" placeholder=" ">
+            <label class="formLabel">Username</label>
+        </div>
+        <div class="rebelde-box">
+            <input class="formInput" type="password" formControlName="senha" placeholder=" ">
+            <label class="formLabel">Senha</label>
+        </div>
         <div class="rebelde-box">
             <input class="formInput" type="text" formControlName="nome" placeholder=" ">
             <label class="formLabel">Nome</label>
@@ -11,25 +22,31 @@
             <label class="formLabel">Idade</label>
         </div>
         <div class="rebelde-box">
-            <select class="formInputSelect" name="genero" id="genero" formControlName="genero">
+            <select class="formInputSelect" name="genero" id="genero" (change)="stateChange($event)" formControlName="genero">
                 <option value=""></option>
                 <option value="masculino">Masculino</option>
                 <option value="feminino">Feminino</option>
             </select>
-            <label class="formLabelSelect" for="genero">Gênero</label>
+            <label class="formLabelSelect" for="genero" [ngClass]="{'formLabelSelected': dropDownLabel, 'formLabelSelect': !dropDownLabel}">Gênero</label>
         </div>
         <div class="rebelde-box">
             <input class="formInput" type="text" formControlName="nomeDaGalaxia" placeholder=" ">
             <label class="formLabel">Galáxia</label>
         </div>
-        <button>CRIAR</button>
+        <div class="box-button">
+            <div class="rebelde-box-button">
+                <button>CRIAR</button>
+                <button (click)="redirecionar()">VOLTAR</button>
+            </div>
+        </div>
+        
     </form>
 </div>
 
 <app-modal #modal (teste)="testeOutput2($event)">
     <div class="box-card">
         <div class="moldura-avatar">
-            <img src="../../assets/img/Avatar.png" alt="" class="avatar-card">
+            <img src="../../assets/img/{{retornoCadastro.avatar}}.png" alt="" class="avatar-card">
         </div>
         <p class="welcome-title">Você agora faz parte do lado negro da força!</p>
         <p class="welcome">N° Reservista: <span class="info-card">{{ retornoCadastro.id }}</span></p>
@@ -45,10 +62,10 @@
         </div>
         <p class="welcome">Para nos ajudar nesta guerra, estes são seus itens:</p>
         <div class="info-inventario">
-            <img src="../../assets/img/icons8-gun-30.png" alt="" srcset=""><span class="info-card">{{retornoCadastro.inventario.arma.quantidade}}</span>
-            <img src="../../assets/img/icons8-rifle-magazine-30.png" alt="" srcset=""><span class="info-card">{{retornoCadastro.inventario.municao.quantidade}}</span>
-            <img src="../../assets/img/icons8-thirst-30.png" alt="" srcset=""><span class="info-card">{{retornoCadastro.inventario.agua.quantidade}}</span>
-            <img src="../../assets/img/icons8-ham-30.png" alt="" srcset=""><span class="info-card">{{retornoCadastro.inventario.comida.quantidade}}</span>
+            <img src="../../assets/img/icons8-gun-30.png" alt="" srcset=""><span class="info-card">{{retornoCadastro.inventario.items.arma.quantidade}}</span>
+            <img src="../../assets/img/icons8-rifle-magazine-30.png" alt="" srcset=""><span class="info-card">{{retornoCadastro.inventario.items.municao.quantidade}}</span>
+            <img src="../../assets/img/icons8-thirst-30.png" alt="" srcset=""><span class="info-card">{{retornoCadastro.inventario.items.agua.quantidade}}</span>
+            <img src="../../assets/img/icons8-ham-30.png" alt="" srcset=""><span class="info-card">{{retornoCadastro.inventario.items.comida.quantidade}}</span>
         </div>
     </div>
     <button class="button-modal" (click)="modal.change()">FECHAR</button>

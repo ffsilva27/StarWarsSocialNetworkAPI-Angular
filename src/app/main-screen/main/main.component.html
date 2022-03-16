@@ -1,0 +1,38 @@
+<div class="outterContainer">
+    <app-nav-bar></app-nav-bar>
+    <div class="mainContainer">
+        <div class="left">
+            <div class="card">
+                <div class="imgContainer">
+                    <div class="moldura">
+                        <img src="../../../assets/img/{{user.avatar}}.png" alt="">
+                    </div>
+                </div>
+                <p class="welcome-title">Nome: <span class="info-card">{{user.nome}}</span></p>
+                <div class="info-pessoais">
+                    <p class="welcome">Idade: <span class="info-card">{{user.idade}}</span></p>
+                    <p class="welcome">Gênero: <span class="info-card">{{user.genero | genero}}</span></p>
+                </div>
+                <p class="welcome" style="text-align: center;">Galáxia: <span class="info-card">{{user.localizacao.nomeDaGalaxia}}</span></p>
+                <div class="box-inventario">
+                    <div class="box-item">
+                        <img src="../../assets/img/icons8-gun-30.png" alt="" srcset=""><span class="info-card">{{user.inventario.items.arma.quantidade}}</span>
+                    </div>
+                    <div class="box-item">
+                        <img src="../../assets/img/icons8-rifle-magazine-30.png" alt="" srcset=""><span class="info-card">{{user.inventario.items.municao.quantidade}}</span>
+                    </div>
+                    <div class="box-item">
+                        <img src="../../assets/img/icons8-thirst-30.png" alt="" srcset=""><span class="info-card">{{user.inventario.items.agua.quantidade}}</span>
+                    </div>
+                    <div class="box-item">
+                        <img src="../../assets/img/icons8-ham-30.png" alt="" srcset=""><span class="info-card">{{user.inventario.items.comida.quantidade}}</span>
+                    </div>
+                </div>
+                <button>ATUALIZAR LOCALIZAÇÃO</button>
+            </div>
+        </div>
+        <div class="right">
+            <app-listagem-rebeldes></app-listagem-rebeldes>
+        </div>
+    </div>
+</div>

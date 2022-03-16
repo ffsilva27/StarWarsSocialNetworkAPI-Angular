@@ -1,0 +1,133 @@
+.outterContainer {
+    background: rgb(224,68,68);
+    background: linear-gradient(160deg, rgba(224,68,68,0.9416141456582633) 0%, rgba(17,93,182,1) 100%);
+    width: 100%;
+    height: fit-content;
+    min-height: 100%;
+}
+
+.mainContainer{
+    display: flex;
+    height: calc(100% - 60px);
+    width: 100%;
+}
+
+.left {
+    width: 23%;
+    height: 100%;
+}
+
+.right {
+    width: 77%;
+    height: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: rgba(0,0,0,.5);
+    margin: 15px;
+    padding: 15px;
+    width: calc(100% - 30px);
+    border-radius: 10px;
+    height: calc(100% - 30px);
+}
+
+.imgContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    width: 100%;
+}
+
+img {
+    width: 80%;
+    height: 100%;
+}
+
+.moldura {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 11vw;
+    height: 8.5vw;
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 50%;
+    border: 1px white;
+}
+
+.welcome-title {
+    margin-top: 45px;
+    color: #ff0043;
+    font-size: 16px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.welcome {
+    margin-top: 15px;
+    color: #ff0043;
+    font-size: 15px;
+}
+
+.info-card{
+    color: AliceBlue;
+    font-size: 13px;
+    font-weight: lighter;
+}
+
+.info-pessoais{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content:space-around;
+    align-items:center;
+}
+
+.box-inventario{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.box-inventario img{
+    height: 100%;
+    width: 30px;
+}
+
+.box-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card button {
+    position: relative;
+    padding: 5px 10px;
+    color: #ff0043;
+    font-size: 12px;
+    transition: .5s;
+    margin-top: 35px;
+    letter-spacing: 3px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 15px;
+}
+
+.card button:hover {
+    background: #ff0043;
+    color: #fff;
+    box-shadow: 0 0 5px #ff0043,
+                0 0 25px #ff0043,
+                0 0 50px #ff0043,
+                0 0 100px #ff0043;
+}

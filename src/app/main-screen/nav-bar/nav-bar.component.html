@@ -1,0 +1,19 @@
+<div class="outterWrapper">
+    <nav class="insideWrapper">
+        <img src="../../../assets/img/Star_Wars-Logo.svg" class="logo">
+        <div>
+            <a>
+                <div class="avatarWrapper">
+                    <button (click)="logout()"><img class="avatar" src="../../../assets/img/box-arrow-left.svg"></button>
+                </div>
+                <p>Logout</p>
+            </a>
+            <a>
+                <div class="avatarWrapper">
+                    <img src="../../../assets/img/icons8-darth-vader.svg" class="avatar">
+                </div>
+                <p>{{rebeldeService.user.nome}}</p>
+            </a>
+        </div>
+    </nav>
+</div>

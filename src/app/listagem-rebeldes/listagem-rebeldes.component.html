@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-xl-4 col-md-6 col-xs-12" *ngFor="let rebelde of listaDeRebeldes">
+            <div class="cardComponent">
+                <div class="moldura-avatar">
+                    <img src="../../assets/img/{{rebelde.avatar}}.png" alt="" class="avatar-card">
+                </div>
+                <p class="welcome">Nome: <span class="info-card">{{ rebelde.nome }}</span></p>
+                <div class="info-pessoais">
+                    <p class="welcome">Idade: <span class="info-card">{{ rebelde.idade }}</span></p>
+                    <p class="welcome">Gênero: <span class="info-card">{{ rebelde.genero | genero}}</span></p>
+                </div>
+                <div class="info-pessoais">
+                    <p class="welcome">Galáxia: <span class="info-card">{{ rebelde.localizacao.nomeDaGalaxia }}</span></p>
+                    <p class="welcome">Traidor: <span class="info-card">{{ rebelde.traidor | traidor}}</span></p>
+                </div>
+                <div class="box-button">
+                    <button (click)="modalListagem.show(); rebeldeService.rebelde = rebelde">DETALHES</button>
+                    <button (click)="relatarTraidor(rebelde.id)">TRAIDOR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-modal-listagem #modalListagem ></app-modal-listagem>
