@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { catchError, delay, of } from 'rxjs';
 
 
 export interface rebeldeInterface {
@@ -14,6 +15,7 @@ export interface rebeldeInterface {
     longitude:number,
     nomeDaGalaxia: string
   },
+  avatar: string,
   inventario: {
     items:{
       arma:{
@@ -52,6 +54,7 @@ export interface rebeldeRequestInfo {
 export class RebeldeService {
   url: string = "http://localhost:8080/rebeldes";
   urlTraidor: string = "http://localhost:8080/rebeldes/traidor/";
+  urlLogin: string = "http://localhost:8080/login";
 
   constructor(private http: HttpClient) { }
 
@@ -66,6 +69,7 @@ export class RebeldeService {
       longitude: 0,
       nomeDaGalaxia: ''
     },
+    avatar: '',
     inventario: {
       items: {
         arma: {
@@ -97,6 +101,18 @@ export class RebeldeService {
     }
   }
 
+  login(username:string, senha:string){
+    return this.http.post<rebeldeInterface>(this.urlLogin,{
+      username: username,
+      senha: senha
+    }).pipe(
+      catchError((x)=>{
+        console.log(x)
+        return of(this.rebelde) 
+      }),
+    )
+  }
+
   cadastrarRebelde(nome:string, idade: number, genero:string, nomeDaGalaxia: string){
     return this.http.post<rebeldeInterface>(this.url, {
       nome: nome,
@@ -108,6 +124,10 @@ export class RebeldeService {
     });
   }
 
+  getRebelde(id:any){
+    return this.http.get<rebeldeInterface>(this.url+"/{id}")
+  }
+
   listarRebeldes(){
     return this.http.get(this.url);
   }
@@ -116,4 +136,5 @@ export class RebeldeService {
     return this.http.patch(this.urlTraidor + id, "");
   }
 
+  
 }

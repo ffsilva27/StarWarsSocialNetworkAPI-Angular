@@ -5,13 +5,14 @@
 <div class="criacao-box">
     <img class="avatar" src="../../assets/img/Avatar.png" alt="" srcset="">
     <h2>Bem-vindo ao lado negro da força</h2>
-    <form>
+    <h2 *ngIf="loginError" style="color: red">Usuário ou Senha incorretos!</h2>
+    <form [formGroup]="group" (ngSubmit)="login()">
         <div class="rebelde-box">
-            <input class="formInput" type="text" formControlName="nome" placeholder=" ">
-            <label class="formLabel">Nome</label>
+            <input class="formInput" type="text" formControlName="username" placeholder=" ">
+            <label class="formLabel">Usuario</label>
         </div>
         <div class="rebelde-box">
-            <input class="formInput" type="text" formControlName="idade" placeholder=" ">
+            <input class="formInput" type="password" formControlName="senha" placeholder=" ">
             <label class="formLabel">Senha</label>
         </div>
         <div class="buttonWrapper">

@@ -1,13 +1,14 @@
 .outterContainer {
     background: rgb(224,68,68);
     background: linear-gradient(160deg, rgba(224,68,68,0.9416141456582633) 0%, rgba(17,93,182,1) 100%);
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: fit-content;
+    min-height: 100%;
 }
 
 .mainContainer{
     display: flex;
-    height: calc(100vh - 60px);
+    height: calc(100% - 60px);
     width: 100%;
 }
 

@@ -26,6 +26,7 @@ export class CriarRebeldeComponent implements OnInit {
       longitude: 0,
       nomeDaGalaxia: ''
     },
+    avatar: '',
     inventario: {
       items: {
         arma: {
@@ -50,6 +51,8 @@ export class CriarRebeldeComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private rebeldeService: RebeldeService) {
     this.father = fb.group({
+      username:["", Validators.required],
+      senha:["", Validators.required],
       nome: ["", Validators.required],
       idade: ["", Validators.required],
       genero: ["", Validators.required],
