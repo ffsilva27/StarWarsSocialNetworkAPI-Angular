@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: "cadastro", component: CriarRebeldeComponent},
   // {path: "main/:id", component: MainComponent, canActivate: [AuthGuard]},
   // {path: "users", component: UsersComponent, canActivate: [AuthGuard]},
-  {path: '', redirectTo: 'main', pathMatch: 'full' },
+  {path: '', redirectTo: 'home', pathMatch: 'full' },
   {path: '**', component: HomeComponent}
 ];
 
