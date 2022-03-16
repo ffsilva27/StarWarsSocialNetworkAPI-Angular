@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit {
     this.rebeldeService.login(this.group.get(['username'])?.value, this.group.get(['senha'])?.value).subscribe(data => {
       if(data.id){
         this.retornoLogin = data;
-        this.rebeldeService.userId = data.id;        
+        this.rebeldeService.user = data;        
         localStorage.setItem('user', this.retornoLogin.id);
         this.router.navigate(['main'])
       } else {

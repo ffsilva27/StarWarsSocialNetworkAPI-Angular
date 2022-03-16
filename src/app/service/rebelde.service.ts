@@ -52,12 +52,45 @@ export interface rebeldeRequestInfo {
 })
 
 export class RebeldeService {
-  userId: string = '';
   url: string = "http://localhost:8080/rebeldes";
   urlTraidor: string = "http://localhost:8080/rebeldes/traidor/";
   urlLogin: string = "http://localhost:8080/login";
 
   constructor(private http: HttpClient) { }
+
+  user: rebeldeInterface = {
+    id: undefined,
+    nome: '',
+    idade: 0,
+    genero: '',
+    traidor: false,
+    localizacao: {
+      latitude: 0,
+      longitude: 0,
+      nomeDaGalaxia: ''
+    },
+    avatar: '',
+    inventario: {
+      items: {
+        arma: {
+          pontos: 0,
+          quantidade: 0
+        },
+        municao: {
+          pontos: 0,
+          quantidade: 0
+        },
+        agua: {
+          pontos: 0,
+          quantidade: 0
+        },
+        comida: {
+          pontos: 0,
+          quantidade: 0
+        }
+      }
+    }
+  }
 
   rebelde: rebeldeInterface = {
     id: undefined,
@@ -137,5 +170,4 @@ export class RebeldeService {
     return this.http.patch(this.urlTraidor + id, "");
   }
 
-  
 }

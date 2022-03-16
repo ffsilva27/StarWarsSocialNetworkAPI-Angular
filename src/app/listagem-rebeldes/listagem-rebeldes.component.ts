@@ -29,6 +29,11 @@ export class ListagemRebeldesComponent implements OnInit {
   listarRebeldes(){
     this.rebeldeService.listarRebeldes().subscribe(data=>{
       this.listaDeRebeldes = data;
+      for( var i = 0; i < this.listaDeRebeldes.length; i++){ 
+        if ( this.listaDeRebeldes[i].id === this.rebeldeService.user.id) { 
+          this.listaDeRebeldes.splice(i, 1); 
+        }
+      }
     })
   }
 
