@@ -7,23 +7,23 @@
         <div class="modal-container">
             <div class="box-modal">
                 <div class="moldura-avatar">
-                    <img src="../../assets/img/{{rebeldeService.rebelde.avatar}}.png" alt="" class="avatar-card">
+                    <img src="../../assets/img/{{rebeldeService.user.avatar}}.png" alt="" class="avatar-card">
                 </div>
                 <p class="welcome-title">Informações confidenciais</p>
-                <p class="welcome">Nome: <span class="info-card">{{ rebeldeService.rebelde.nome }}</span></p>
+                <p class="welcome">Nome: <span class="info-card">{{ rebeldeService.user.nome }}</span></p>
                 <div class="info-pessoais">
-                    <p class="welcome">Idade: <span class="info-card">{{ rebeldeService.rebelde.idade }}</span></p>
-                    <p class="welcome">Gênero: <span class="info-card">{{ rebeldeService.rebelde.genero | genero }}</span></p>
+                    <p class="welcome">Idade: <span class="info-card">{{ rebeldeService.user.idade }}</span></p>
+                    <p class="welcome">Gênero: <span class="info-card">{{ rebeldeService.user.genero | genero }}</span></p>
                 </div>
                 <div class="info-pessoais">
-                    <p class="welcome">Galáxia: <span class="info-card">{{ rebeldeService.rebelde.localizacao.nomeDaGalaxia }}</span></p>
-                    <p class="welcome">Latitude: <span class="info-card">{{ rebeldeService.rebelde.localizacao.latitude }}</span></p>
-                    <p class="welcome">Longitude: <span class="info-card">{{ rebeldeService.rebelde.localizacao.longitude }}</span></p>
+                    <p class="welcome">Galáxia: <span class="info-card">{{ rebeldeService.user.localizacao.nomeDaGalaxia }}</span></p>
+                    <p class="welcome">Latitude: <span class="info-card">{{ rebeldeService.user.localizacao.latitude }}</span></p>
+                    <p class="welcome">Longitude: <span class="info-card">{{ rebeldeService.user.localizacao.longitude }}</span></p>
                 </div>
-                <p class="welcome">Traidor: <span class="info-card">{{ rebeldeService.rebelde.traidor | traidor }}</span></p>
+                <p class="welcome">Traidor: <span class="info-card">{{ rebeldeService.user.traidor | traidor }}</span></p>
                 <div class="info-inventario">
                     <div class="quebra">
-                        <img src="../../assets/img/icons8-gun-30.png" alt="" srcset=""><span class="info-card">{{ rebeldeService.rebelde.inventario.items.arma.quantidade }}</span>
+                        <img src="../../assets/img/icons8-gun-30.png" alt="" srcset=""><span class="info-card">{{ rebeldeService.user.inventario.items.arma.quantidade }}</span>
                         <div class="count">
                             <button (click)="count($event)"><img class="count-remet-subtract-gun" src="../../assets/img/subtract.svg" alt="" srcset=""></button>
                             <input type="text" [(ngModel)]="counterGunRemet">
@@ -31,21 +31,21 @@
                         </div>
                     </div>
                     <div class="quebra">
-                        <img src="../../assets/img/icons8-rifle-magazine-30.png" alt="" srcset=""><span class="info-card">{{ rebeldeService.rebelde.inventario.items.municao.quantidade }}</span>
+                        <img src="../../assets/img/icons8-rifle-magazine-30.png" alt="" srcset=""><span class="info-card">{{ rebeldeService.user.inventario.items.municao.quantidade }}</span>
                         <div class="count">
                             <button (click)="count($event)"><img class="count-remet-subtract-municion" src="../../assets/img/subtract.svg" alt="" srcset=""></button>
                             <input type="text" [(ngModel)]="counterMunicionRemet">
                             <button (click)="count($event)"><img class="count-remet-plus-municion" src="../../assets/img/plus.svg" alt="" srcset=""></button>
                         </div>
                     </div><div class="quebra">
-                        <img src="../../assets/img/icons8-thirst-30.png" alt="" srcset=""><span class="info-card">{{ rebeldeService.rebelde.inventario.items.agua.quantidade }}</span>
+                        <img src="../../assets/img/icons8-thirst-30.png" alt="" srcset=""><span class="info-card">{{ rebeldeService.user.inventario.items.agua.quantidade }}</span>
                         <div class="count">
                             <button (click)="count($event)"><img class="count-remet-subtract-water" src="../../assets/img/subtract.svg" alt="" srcset=""></button>
                             <input type="text" [(ngModel)]="counterWaterRemet">
                             <button (click)="count($event)"><img class="count-remet-plus-water" src="../../assets/img/plus.svg" alt="" srcset=""></button>
                         </div>
                     </div><div class="quebra">
-                        <img src="../../assets/img/icons8-ham-30.png" alt="" srcset=""><span class="info-card">{{ rebeldeService.rebelde.inventario.items.comida.quantidade }}</span>
+                        <img src="../../assets/img/icons8-ham-30.png" alt="" srcset=""><span class="info-card">{{ rebeldeService.user.inventario.items.comida.quantidade }}</span>
                         <div class="count">
                             <button (click)="count($event)"><img class="count-remet-subtract-food" src="../../assets/img/subtract.svg" alt="" srcset=""></button>
                             <input type="text" [(ngModel)]="counterFoodRemet">
@@ -106,6 +106,6 @@
             </div>
         </div>
 
-        <button class="button-modal-listagem">NEGOCIAR</button>
-    </div>    
+        <button class="button-modal-listagem" (click)="negociar()">NEGOCIAR</button>
+    </div>
 </div>

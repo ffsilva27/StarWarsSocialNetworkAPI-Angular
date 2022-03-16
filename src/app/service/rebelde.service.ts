@@ -170,4 +170,14 @@ export class RebeldeService {
     return this.http.patch(this.urlTraidor + id, "");
   }
 
+  negociar(itemRemetente:string[], itemDestinatario:string[], qtdItemRemetente: number[], qtdItemDestinatario: number[]){
+    return this.http.patch(this.url+"/negociar",{
+      idRemetente: this.user.id,
+      idDestinatario:this.rebelde.id,
+      itemRemetente: itemRemetente,
+      itemDestinatario: itemDestinatario,
+      qtdItemRemetente: qtdItemRemetente,
+      qtdItemDestinatario: qtdItemDestinatario
+    })
+  }
 }
