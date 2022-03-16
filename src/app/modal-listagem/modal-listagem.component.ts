@@ -2,6 +2,7 @@ import { Event } from '@angular/router';
 import { RebeldeService } from './../service/rebelde.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
   selector: 'app-modal-listagem',
@@ -127,16 +128,19 @@ export class ModalListagemComponent implements OnInit {
     if (this.counterFoodRemet > 0) qtdItemRemetente.push(this.counterFoodRemet); 
  
     this.rebeldeService.negociar(itemRemetente, itemDestinatario, qtdItemRemetente, qtdItemDestinatario).subscribe(data => {
-      console.log(data)
+      if (data.msg.split(" ")[0]=="ERRO:"){
+        this.matSnack.open(data.msg, "Erro", {duration:2000});
+      } else {
+        this.matSnack.open(data.msg, "Sucesso", {duration:2000});
+        this.load();
+      }
     })
-    this.matSnack.open("Negociação realizada com sucesso!", "Sucesso", {duration:1500});
-    // this.load();
   }
 
   load(){
     setTimeout(function(){
       location.reload();
-    },1500); 
+    },2000); 
   }
 
 }
